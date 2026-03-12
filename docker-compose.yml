@@ -1,0 +1,38 @@
+
+services:
+
+  litellm:
+    image: ghcr.io/berriai/litellm:main
+    container_name: litellm
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./litellm-config.yaml:/app/proxy_server_config.yaml
+    env_file:
+      - .env
+    restart: unless-stopped
+
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:main
+    container_name: open-webui
+    ports:
+      - "3000:8080"
+    environment:
+      - OPENAI_API_BASE_URL=http://litellm:4000/v1   # ← connect to LiteLLM
+      - OPENAI_API_KEY=anything                       # ← required but can be dummy
+      - HF_TOKEN=${HF_API_KEY}                       # ← authenticated HuggingFace downloads
+    volumes:
+      - open-webui:/app/backend/data
+    depends_on:
+      - litellm
+    restart: unless-stopped
+
+  searxng:
+    image: searxng/searxng:latest
+    container_name: searxng
+    ports:
+      - "8888:8080"        # accessible at localhost:8888 for debugging
+    restart: unless-stopped
+
+volumes:
+  open-webui:
