@@ -5,13 +5,13 @@ model_list:
   # ⭐ = BEST picks — significantly faster than OpenRouter
   # ============================================================
 
-  - model_name: groq-llama-3.3-70b ⭐⭐⭐  # Meta Llama 3.3 70B — best quality on Groq, ~280 tps, 131K ctx
+  - model_name: groq-llama-3.3-70b  # Meta Llama 3.3 70B — best quality on Groq, ~280 tps, 131K ctx
     litellm_params:
       model: openai/llama-3.3-70b-versatile
       api_base: https://api.groq.com/openai/v1
       api_key: os.environ/GROQ_API_KEY
 
-  - model_name: groq-llama-4-scout ⭐⭐⭐  # Meta Llama 4 Scout 17B — newest, fastest ~750 tps, 131K ctx
+  - model_name: groq-llama-4-scout  # Meta Llama 4 Scout 17B — newest, fastest ~750 tps, 131K ctx
     litellm_params:
       model: openai/meta-llama/llama-4-scout-17b-16e-instruct
       api_base: https://api.groq.com/openai/v1
@@ -23,13 +23,13 @@ model_list:
       api_base: https://api.groq.com/openai/v1
       api_key: os.environ/GROQ_API_KEY
 
-  - model_name: groq-gpt-oss-120b ⭐⭐⭐   # OpenAI open 120B MoE — reasoning, agents, tool use, ~500 tps, 131K ctx
+  - model_name: groq-gpt-oss-120b  # OpenAI open 120B MoE — reasoning, agents, tool use, ~500 tps, 131K ctx
     litellm_params:
       model: openai/openai/gpt-oss-120b  # Groq model ID is openai/gpt-oss-120b
       api_base: https://api.groq.com/openai/v1
       api_key: os.environ/GROQ_API_KEY
 
-  - model_name: groq-gpt-oss-20b ⭐⭐⭐     # OpenAI open 20B MoE — fastest on Groq ~1000 tps, 131K ctx
+  - model_name: groq-gpt-oss-20b  # OpenAI open 20B MoE — fastest on Groq ~1000 tps, 131K ctx
     litellm_params:
       model: openai/openai/gpt-oss-20b
       api_base: https://api.groq.com/openai/v1
@@ -42,51 +42,51 @@ model_list:
 
   # ── TIER 1: BEST — Large, powerful, free ──────────────────
 
-  - model_name: OR-step-3.5-flash ⭐⭐⭐   # StepFun 196B MoE — fastest reasoning model, 256K ctx
+  - model_name: OR-step-3.5-flash  # StepFun 196B MoE — fastest reasoning model, 256K ctx
     litellm_params:
       model: openai/stepfun/step-3.5-flash:free
       api_base: https://openrouter.ai/api/v1
       api_key: os.environ/OPENROUTER_API_KEY
 
-  - model_name: OR-trinity-large ⭐⭐⭐    # Arcee 400B MoE — creative writing, roleplay, agents, 131K ctx
+  - model_name: OR-trinity-large  # Arcee 400B MoE — creative writing, roleplay, agents, 131K ctx
     litellm_params:
       model: openai/arcee-ai/trinity-large-preview:free
       api_base: https://openrouter.ai/api/v1
       api_key: os.environ/OPENROUTER_API_KEY
 
-  - model_name: OR-nemotron-super ⭐⭐⭐   # NVIDIA 120B MoE — multi-agent, complex reasoning, 120K ctx
+  - model_name: OR-nemotron-super  # NVIDIA 120B MoE — multi-agent, complex reasoning, 120K ctx
     litellm_params:
       model: openai/nvidia/nemotron-3-super-120b-a12b:free
       api_base: https://openrouter.ai/api/v1
       api_key: os.environ/OPENROUTER_API_KEY
 
-  - model_name: OR-hermes-405b ⭐⭐⭐      # Nous Hermes 3 405B — frontier agentic, roleplay, 128K ctx
+  - model_name: OR-hermes-405b  # Nous Hermes 3 405B — frontier agentic, roleplay, 128K ctx
     litellm_params:
       model: openai/nousresearch/hermes-3-llama-3.1-405b:free
       api_base: https://openrouter.ai/api/v1
       api_key: os.environ/OPENROUTER_API_KEY
 
-  - model_name: OR-qwen3-next-80b ⭐⭐⭐   # Qwen3 Next 80B A3B — reasoning, code, multilingual, 262K ctx
+  - model_name: OR-qwen3-next-80b  # Qwen3 Next 80B A3B — reasoning, code, multilingual, 262K ctx
     litellm_params:
       model: openai/qwen/qwen3-next-80b-a3b-instruct:free
       api_base: https://openrouter.ai/api/v1
       api_key: os.environ/OPENROUTER_API_KEY
 
-  - model_name: OR-qwen3-coder-480b ⭐⭐⭐ # Qwen3 Coder 480B MoE — best free coding model, 1M ctx
+  - model_name: OR-qwen3-coder-480b  # Qwen3 Coder 480B MoE — best free coding model, 1M ctx
     litellm_params:
       model: openai/qwen/qwen3-coder:free  #
       api_base: https://openrouter.ai/api/v1
       api_key: os.environ/OPENROUTER_API_KEY
 
   # ── NVIDIA MODELS —────────────────────────────────────
-  - model_name: NIM-glm-4.7 ⭐⭐⭐      # GLM-4.7 — best coding, reasoning, 131K ctx
+  - model_name: NIM-glm-4.7  # GLM-4.7 — best coding, reasoning, 131K ctx
     litellm_params:
       model: openai/z-ai/glm4.7
       api_base: https://integrate.api.nvidia.com/v1
       api_key: os.environ/NVIDIA_NIM_API_KEY
 
     # ── DEEPSEEK (NVIDIA NIM) ───────────────────────────────
-  - model_name: NIM-deepseek-v3.2   ⭐⭐⭐       # 685B MoE, coding + writing + tool calling
+  - model_name: NIM-deepseek-v3.2  # 685B MoE, coding + writing + tool calling
     litellm_params:
       model: openai/deepseek-ai/deepseek-v3.2
       api_base: https://integrate.api.nvidia.com/v1
@@ -97,43 +97,43 @@ model_list:
 
   # ── TIER 2: GOOD — Capable mid-size models ────────────────
 
-  - model_name: OR-mistral-small-24b ⭐⭐   # Mistral 24B — multimodal vision+text, 128K ctx
+  - model_name: OR-mistral-small-24b  # Mistral 24B — multimodal vision+text, 128K ctx
     litellm_params:
       model: openai/mistralai/mistral-small-3.1-24b-instruct:free
       api_base: https://openrouter.ai/api/v1
       api_key: os.environ/OPENROUTER_API_KEY
 
-  - model_name: OR-glm-4.5-air ⭐⭐         # Z.ai GLM 4.5 Air MoE — thinking mode + tool use, 131K ctx
+  - model_name: OR-glm-4.5-air  # Z.ai GLM 4.5 Air MoE — thinking mode + tool use, 131K ctx
     litellm_params:
       model: openai/z-ai/glm-4.5-air:free
       api_base: https://openrouter.ai/api/v1
       api_key: os.environ/OPENROUTER_API_KEY
 
-  - model_name: OR-trinity-mini ⭐⭐        # Arcee 26B MoE — fast tool calling, multi-step agents, 131K ctx
+  - model_name: OR-trinity-mini  # Arcee 26B MoE — fast tool calling, multi-step agents, 131K ctx
     litellm_params:
       model: openai/arcee-ai/trinity-mini:free
       api_base: https://openrouter.ai/api/v1
       api_key: os.environ/OPENROUTER_API_KEY
 
-  - model_name: OR-nemotron-nano-30b ⭐⭐   # NVIDIA 30B MoE — agentic AI, 256K ctx
+  - model_name: OR-nemotron-nano-30b  # NVIDIA 30B MoE — agentic AI, 256K ctx
     litellm_params:
       model: openai/nvidia/nemotron-3-nano-30b-a3b:free
       api_base: https://openrouter.ai/api/v1
       api_key: os.environ/OPENROUTER_API_KEY
 
-  - model_name: OR-nemotron-nano-9b ⭐⭐    # NVIDIA 9B — reasoning+non-reasoning toggle, 128K ctx
+  - model_name: OR-nemotron-nano-9b  # NVIDIA 9B — reasoning+non-reasoning toggle, 128K ctx
     litellm_params:
       model: openai/nvidia/nemotron-nano-9b-v2:free
       api_base: https://openrouter.ai/api/v1
       api_key: os.environ/OPENROUTER_API_KEY
 
-  - model_name: OR-nemotron-nano-12b-vl ⭐⭐ # NVIDIA 12B vision-language — image understanding
+  - model_name: OR-nemotron-nano-12b-vl  # NVIDIA 12B vision-language — image understanding
     litellm_params:
       model: openai/nvidia/nemotron-nano-12b-v2-vl:free
       api_base: https://openrouter.ai/api/v1
       api_key: os.environ/OPENROUTER_API_KEY
 
-  - model_name: OR-hunter-alpha ⭐⭐        # OpenRouter 1T param — frontier agentic, 1M ctx
+  - model_name: OR-hunter-alpha  # OpenRouter 1T param — frontier agentic, 1M ctx
     litellm_params:
       model: openai/openrouter/hunter-alpha
       api_base: https://openrouter.ai/api/v1
